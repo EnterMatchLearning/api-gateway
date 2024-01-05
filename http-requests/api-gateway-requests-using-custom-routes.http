@@ -1,0 +1,16 @@
+@host=http://localhost:8765
+
+### Call /get to test custom route
+GET {{host}}/get
+
+### Get currency exchange
+GET {{host}}/currency-exchange/from/USD/to/INR
+
+### Get currency conversion (uses rest template)
+GET {{host}}/currency-conversion/from/USD/to/INR/quantity/10
+
+### Get currency conversion (uses feign)
+GET {{host}}/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+### Get currency conversion with custom URL (uses feign)
+GET {{host}}/currency-conversion-new/from/USD/to/INR/quantity/10

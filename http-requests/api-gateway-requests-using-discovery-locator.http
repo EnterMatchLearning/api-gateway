@@ -1,0 +1,19 @@
+@host=http://localhost:8765
+
+### Get currency exchange
+< {%
+    request.variables.set("service-name", "currency-exchange")
+%}
+GET {{host}}/{{service-name}}/currency-exchange/from/USD/to/INR
+
+### Get currency conversion (uses rest template)
+< {%
+    request.variables.set("service-name", "currency-conversion")
+%}
+GET {{host}}/{{service-name}}/currency-conversion/from/USD/to/INR/quantity/10
+
+### Get currency conversion (uses feign)
+< {%
+    request.variables.set("service-name", "currency-conversion")
+%}
+GET {{host}}/{{service-name}}/currency-conversion-feign/from/USD/to/INR/quantity/10
